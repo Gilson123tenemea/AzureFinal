@@ -14,9 +14,11 @@ jobs:
       contents: read
 
     steps:
+      # 1️⃣ Clona tu repositorio
       - name: Checkout code
         uses: actions/checkout@v4
 
+      # 2️⃣ Login a Azure
       - name: Login to Azure
         uses: azure/login@v2
         with:
@@ -24,6 +26,7 @@ jobs:
           tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_6A6F0D1BB09B42F183A2EEE0EEB8F78E }}
           subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_32A67695C4C34604AA098CD0DB7DDB79 }}
 
+      # 3️⃣ Despliega el WAR a Azure
       - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v3
         with:

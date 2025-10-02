@@ -14,6 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       id-token: write
+
       contents: read
 
     steps:
@@ -30,7 +31,8 @@ jobs:
       - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v3
         with:
-          app-name: 'WEBClientes-APP-Gilson'
+          app-name: 'WEBGILSON'
           slot-name: 'Production'
           package: './dist/ROOT.war'
+
 
